@@ -133,3 +133,12 @@ plt + geom_boxplot() + theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 
 ?facet_wrap()
 ?ggplot()
+
+#facet our previous example by the fuel-efficiency type
+plt <- ggplot(mpg_long, aes(manufacturer, Rating, color = MPG_Type))
+plt + geom_boxplot() + facet_wrap(vars(MPG_Type)) + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none") + xlab("Manufacturer")
+
+#SKILL DRILL 15.3.7 create two additional plots using different variables for facet_wrap()
+plt <- ggplot(mpg_long, aes(manufacturer, Rating, color = cyl))
+plt + geom_boxplot() + facet_wrap(vars(cyl,drv)) + theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5), legend.position = "none") + xlab("Manufacturer")
