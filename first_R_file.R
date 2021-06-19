@@ -120,3 +120,16 @@ mpg_summary <- mpg %>% group_by(class) %>% summarize(Mean_Engine = mean(displ), 
 plt <- ggplot(mpg_summary, aes(class, Mean_Engine)) #import dataset into ggplot2
 plt + geom_point(size = 4) + labs(x = "Vehicle Class", y = "Mean Engince Size") + #add scatter plot
 geom_errorbar(aes(ymin = Mean_Engine - SD_Engine, ymax = Mean_Engine + SD_Engine)) #overlay with errorbars
+
+
+#Faceting: consider, if instead of the wide format, out mpg dataset was obtained where city and highway fuel 
+#efficiency data was provided in long format:
+mpg_long <- mpg %>% gather(key = "MPG_Type", value = "Rating", c(cty,hwy)) # convert to long format
+head(mpg_long)
+
+#visualize the different vehicle fuel efficiency ratings by manufacturer
+plt <- ggplot(mpg_long, aes(manufacturer, Rating, color = MPG_Type)) #import datset into ggplot2
+plt + geom_boxplot() + theme(axis.text.x = element_text(angle = 45, hjust = 1)) #add boxplot with labels rotated 45 degrees
+
+?facet_wrap()
+?ggplot()
