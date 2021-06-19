@@ -155,3 +155,15 @@ ggplot(mtcars, aes(x= wt)) + geom_density() #visualize distribution using densit
 #to find if your sample data came from a normally distributed dataset, use a test for normality. 
 #R has a built-in stats library to perform this type of quantitative test: shapiro.test()
 shapiro.test(mtcars$wt)
+
+
+#15.6.1
+#visualize the distribution of driven miles for our entire population dataset using the used_vehicle_data
+population_table <- read.csv("used_car_data.csv", check.names = F, stringsAsFactors = F) #import used car dataset
+plt = ggplot(population_table, aes(x=log10(Miles_Driven))) #import dataset into ggplot2
+plt + geom_density() #visualize distribution using density plot
+
+#now create a sample dataset using sample_n()
+sample_table <- population_table %>% sample_n(50) #randomly sample 50 data points
+plt <- ggplot(sample_table, aes(x=log10(Miles_Driven)))#import dataset into ggplot2
+plt + geom_density()#visualize distribution using density plot
