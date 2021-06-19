@@ -173,3 +173,11 @@ plt + geom_density()#visualize distribution using density plot
 ?t.test()
 #test if miles driven from the sample dataset is statistically different from miles driven in population_table
 t.test(log10(sample_table$Miles_Driven), mu = mean(log10(population_table$Miles_Driven))) #compare sample vs population means
+
+#15.6.3 two-sample t-test
+#test whether mean miles driven of two samples from used car datatset are statistically different.
+#create two samples first
+sample_table <- population_table %>% sample_n(50)
+sample_table2 <- population_table %>% sample_n(50)
+#test the two samples for potential statistical differences
+t.test(log10(sample_table$Miles_Driven), log10(sample_table2$Miles_Driven)) #compares means of two samples
