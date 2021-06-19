@@ -142,3 +142,16 @@ plt + geom_boxplot() + facet_wrap(vars(MPG_Type)) +
 #SKILL DRILL 15.3.7 create two additional plots using different variables for facet_wrap()
 plt <- ggplot(mpg_long, aes(manufacturer, Rating, color = cyl))
 plt + geom_boxplot() + facet_wrap(vars(cyl,drv)) + theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5), legend.position = "none") + xlab("Manufacturer")
+
+#15.4.1
+#this section of the module contains a statistical test lookup table
+#section 15 goes over different datatypes and shapes of data
+
+#15.4.4
+# test the distribution of vehicle weights from the built-in mtcars dataset
+ggplot(mtcars, aes(x= wt)) + geom_density() #visualize distribution using density pot
+
+?shapiro.test()
+#to find if your sample data came from a normally distributed dataset, use a test for normality. 
+#R has a built-in stats library to perform this type of quantitative test: shapiro.test()
+shapiro.test(mtcars$wt)
