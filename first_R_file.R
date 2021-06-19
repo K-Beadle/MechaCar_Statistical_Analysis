@@ -167,3 +167,9 @@ plt + geom_density() #visualize distribution using density plot
 sample_table <- population_table %>% sample_n(50) #randomly sample 50 data points
 plt <- ggplot(sample_table, aes(x=log10(Miles_Driven)))#import dataset into ggplot2
 plt + geom_density()#visualize distribution using density plot
+
+
+#15.6.2 one-sample t-test
+?t.test()
+#test if miles driven from the sample dataset is statistically different from miles driven in population_table
+t.test(log10(sample_table$Miles_Driven), mu = mean(log10(population_table$Miles_Driven))) #compare sample vs population means
