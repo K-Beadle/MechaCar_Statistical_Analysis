@@ -174,6 +174,7 @@ plt + geom_density()#visualize distribution using density plot
 #test if miles driven from the sample dataset is statistically different from miles driven in population_table
 t.test(log10(sample_table$Miles_Driven), mu = mean(log10(population_table$Miles_Driven))) #compare sample vs population means
 
+
 #15.6.3 two-sample t-test
 #test whether mean miles driven of two samples from used car datatset are statistically different.
 #create two samples first
@@ -181,3 +182,13 @@ sample_table <- population_table %>% sample_n(50)
 sample_table2 <- population_table %>% sample_n(50)
 #test the two samples for potential statistical differences
 t.test(log10(sample_table$Miles_Driven), log10(sample_table2$Miles_Driven)) #compares means of two samples
+
+
+#15.6.4 two-sample t-test to compare samples
+#use the modified version of R's built-in mpg dataset, where each 1999 vehicle was paired with a corresponding 2008 vehicle
+mpg_data <- read.csv("mpg_modified.csv", check.names = F, stringsAsFactors = F)
+mpg_1999 <- mpg_data %>% filter(year==1999) #select only 1999 data points
+mpg_2008 <- mpg_data %>% filter(year==2008) #select only 2008 data points
+#paired t-test to determine if there is a statistical difference in overall highway fuel efficiency of
+#vehicles manufactured in 1999 vs 2008
+t.test(mpg_1999$hwy, mpg_2008$hwy, paired = T)
