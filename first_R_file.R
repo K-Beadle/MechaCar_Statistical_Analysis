@@ -192,3 +192,16 @@ mpg_2008 <- mpg_data %>% filter(year==2008) #select only 2008 data points
 #paired t-test to determine if there is a statistical difference in overall highway fuel efficiency of
 #vehicles manufactured in 1999 vs 2008
 t.test(mpg_1999$hwy, mpg_2008$hwy, paired = T)
+
+
+#15.6.5 ANOVA tests
+?aov()
+
+#refer back to mtcars dataset to determine if there is a statistical difference in horsepower based on the size of engine
+#hp is dependent variable. cyl is independent: however, cyl column is numerical interval vector. clean data so its categorical
+mtcars_filt <- mtcars[, c("hp", "cyl")] #filters columns from mtcars
+mtcars_filt$cyl <- factor(mtcars_filt$cyl) #converts numeric column to factor
+#use clean data in aov() function
+aov(hp ~ cyl, data = mtcars_filt) #compare means across multiple levels
+#wrap aov() function in summary() function to get p-value
+summary(aov(hp ~ cyl, data = mtcars_filt))
