@@ -233,7 +233,7 @@ cor(used_matrix)
 
 #15.7.2
 ?lm()
-#create a linear regresssion model
+#create a linear regression model
 lm(qsec ~ hp, mtcars)
 #determine p-value and r-squared value
 summary(lm(qsec ~ hp, mtcars))
