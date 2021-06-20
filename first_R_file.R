@@ -205,3 +205,27 @@ mtcars_filt$cyl <- factor(mtcars_filt$cyl) #converts numeric column to factor
 aov(hp ~ cyl, data = mtcars_filt) #compare means across multiple levels
 #wrap aov() function in summary() function to get p-value
 summary(aov(hp ~ cyl, data = mtcars_filt))
+
+
+#15.7.1 Correlation conundrum
+?cor()
+#practice using cor()
+head(mtcars)
+#test whether or not hp is correlated with qsec(quarter-mile race time)
+plt <- ggplot(mtcars, aes(x = hp, y = qsec))
+plt + geom_point()
+#quantify strength of correlation between the two variables
+cor(mtcars$hp, mtcars$qsec) #calculates correlation coefficient
+
+#another example with used_cars dataset
+used_cars <- read.csv("used_car_data.csv", check.names = F, stringsAsFactors = F)
+head(used_cars)
+#test wheter or not vehicle miles driven and selling price are correlated.
+plt <- ggplot(used_cars, aes(Miles_Driven, Selling_Price))
+plt + geom_point()
+#test correlation strength
+cor(used_cars$Miles_Driven, used_cars$Selling_Price)
+
+#produce a correlation matrix for used_cars dataset. first, select numeric columns from df and convert to a matrix
+used_matrix <- as.matrix(used_cars[, c("Selling_Price", "Present_Price", "Miles_Driven")]) #converts df to numeric matrix
+cor(used_matrix)
