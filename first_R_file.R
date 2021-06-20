@@ -229,3 +229,17 @@ cor(used_cars$Miles_Driven, used_cars$Selling_Price)
 #produce a correlation matrix for used_cars dataset. first, select numeric columns from df and convert to a matrix
 used_matrix <- as.matrix(used_cars[, c("Selling_Price", "Present_Price", "Miles_Driven")]) #converts df to numeric matrix
 cor(used_matrix)
+
+
+#15.7.2
+?lm()
+#create a linear regresssion model
+lm(qsec ~ hp, mtcars)
+#determine p-value and r-squared value
+summary(lm(qsec ~ hp, mtcars))
+#calculate the data points to use for our line plot
+model <- lm(qsec ~ hp, mtcars)
+yvals <- model$coefficients['hp']*mtcars$hp + model$coefficients['(Intercept)'] #determines y-axis values from linear model
+#plot linear model over scatter plot
+plt <- ggplot(mtcars, aes(hp, qsec))
+plt + geom_point() + geom_line(aes(y=yvals), color = "red") #plots scatter and linear model
