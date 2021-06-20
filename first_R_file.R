@@ -56,6 +56,7 @@ all.equal(table,demo_table3)
 #create a barplot that represents the distribution of vehicle classes from the mpg data set
 plt <- ggplot(mpg,aes(x=class)) #import dataset into ggplot2
 plt + geom_bar() #plot a bar plot
+head(mpg)
 
 #15.3.3
 #compare the number of vehicles form each manufacturer in the dataset using summarize() to summarize data
@@ -243,3 +244,27 @@ yvals <- model$coefficients['hp']*mtcars$hp + model$coefficients['(Intercept)'] 
 #plot linear model over scatter plot
 plt <- ggplot(mtcars, aes(hp, qsec))
 plt + geom_point() + geom_line(aes(y=yvals), color = "red") #plots scatter and linear model
+
+
+#15.7.3 multiple linear regression
+#create a multiple linear regression statement
+lm(qsec ~ mpg + disp + drat + wt + hp, data = mtcars)
+summary(lm(qsec ~ mpg + disp + drat + wt + hp, data = mtcars))
+
+
+#15.8.1
+ ?chisq.test()
+#build contingency table to test whether there is a statistical difference in distributions of vehicle class across 1999 and
+#2008 from the mpg dataset
+table(mpg$class, mpg$year) #generates contingency table
+#pass contingency table to chisquared test
+tbl <- table(mpg$class, mpg$year)
+chisq.test(tbl) # compares categorical distributions
+
+#more practice work
+tbl2 <- table(mpg$class, mpg$model)
+chisq.test(tbl2)
+
+head(mpg)
+tbl3 <- table(mpg$model, mpg$year)
+chisq.test(tbl3)
