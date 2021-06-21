@@ -41,5 +41,5 @@
 
 ![lots-t-tests](https://user-images.githubusercontent.com/78178900/122708360-9f1a8080-d221-11eb-904c-44b4380742c7.png)
 
--According to the data, lot 1 and lot 2 both have a p-value larger than the significance level of 0.05: fail to reject the null hypothesis for lot 1 and lot 2.
--According to the data, lot 3 has a p-value of 0.04168 which, is less than the significance level of 0.05: reject the null hypothesis for lot 3.
+- According to the data, lot 1 and lot 2 both have a p-value larger than the significance level of 0.05: fail to reject the null hypothesis for lot 1 and lot 2.
+- According to the data, lot 3 has a p-value of 0.04168 which, is less than the significance level of 0.05: reject the null hypothesis for lot 3.
