@@ -24,3 +24,10 @@
   - Yes,the R-squared value of 0.7149 indicates it effectively predicts mpg of the MechaCar. Although, the level to which it is effective can be interpreted between moderate and substantial.
 
 
+## Summary Statistics on Suspension Coils
+
+![summary_dfs](https://user-images.githubusercontent.com/78178900/122706268-25809380-d21d-11eb-9fb1-5056b95eee3f.png)
+
+- Design specifications for the suspension coils dictate the variance of them must not exceed 100 PSI. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
+  - The current manufacturing data meets the design specification of being less than 100 for all manufacturing lots because the total variance for all three lots is 62.29356.
+  - The current manufacturing data does NOT meet the design specification for being less than 100 for each lot individually because the lot 3 variance is 170.
