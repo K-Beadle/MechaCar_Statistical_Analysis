@@ -31,3 +31,15 @@
 - Design specifications for the suspension coils dictate the variance of them must not exceed 100 PSI. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
   - The current manufacturing data meets the design specification of being less than 100 for all manufacturing lots because the total variance for all three lots is 62.29356.
   - The current manufacturing data does NOT meet the design specification for being less than 100 for each lot individually because the lot 3 variance is 170.
+
+
+## T-Tests on Supension Coils
+
+![one-sample-t-test](https://user-images.githubusercontent.com/78178900/122708179-2ddacd80-d221-11eb-841d-f6b8cf81375a.png)
+
+- According to the data, the PSI across all manufacturing lots is not statistically different from the population mean of 1,500 PSI. The p-value = 0.06028 from the t-test which, is highlighted in the screenshot above. This value is higher than the significance level of 0.05 and there for is not enough evidence to reject the null: fail to reject null hypothesis.
+
+![lots-t-tests](https://user-images.githubusercontent.com/78178900/122708360-9f1a8080-d221-11eb-904c-44b4380742c7.png)
+
+-According to the data, lot 1 and lot 2 both have a p-value larger than the significance level of 0.05: fail to reject the null hypothesis for lot 1 and lot 2.
+-According to the data, lot 3 has a p-value of 0.04168 which, is less than the significance level of 0.05: reject the null hypothesis for lot 3.
