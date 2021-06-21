@@ -48,7 +48,9 @@
 ## Study Design: MechaCar vs Competition
 
 - What metric or metrics are you going to test?
-  - 
+  - I recommend testing the quality, reliability, pricing, safety rating, and visual aesthetics. 
+    - quality
+
 - What is the null hypothesis or alternative hypothesis?
 - What statistical test would you use to test the hypothesis? Why?
 - What data is needed to run the statistical test?
