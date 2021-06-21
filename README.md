@@ -49,8 +49,33 @@
 
 - What metric or metrics are you going to test?
   - I recommend testing the quality, reliability, pricing, safety rating, and visual aesthetics. 
-    - quality
+    - Quality would be more of the interior and how non structural or major operational features withstand average wear and tear.
+    - Reliability would be more of the engine and how long it lasts.
+    - Pricing: is it affordable?
+    - Safety Rating: how safe will the vehicle be percieved as?
+    - Visual Aesthetics: because everybody wants a cool looking car on top of everything else.
 
 - What is the null hypothesis or alternative hypothesis?
+  - Null hypothesis is that there is(are) no statistical difference(s) between the sample of the MechaCar and the sample of the Competition used to analyze vehicle performance.
+  - Alternative hypothesis is that there is(are) a statistical difference(s) between the two samples used to analyze vehicle performance.
+
 - What statistical test would you use to test the hypothesis? Why?
+  - I would use the Two-Sample t-Test and Multiple Linear Regression because we are dealing with multiple samples. I believe these tests would return the most insightful data for analysis.
 - What data is needed to run the statistical test?
+  - A data table of MechaCar vehicle models that includes vehicle specifications and gathered performance data: 
+  - Materials used on interior 
+    - each component (seats, dash, glove box, cup holder, etc.)
+    - average time frame they are replaced/repaired
+  - Most significant components necessary for operation
+    - each component (exhaust, alternator, fuel pump, intake manifold, etc.)
+    - their average time between date purchased and required maintenance
+    - avg time between each required maintenance or replacement
+  - Vehicle Models
+    - each model
+    - model 0-60
+    - price of each model offered
+    - avg price of purchased new vehicle in country
+  - Vehicle saftey ratings
+    - number of drivers who go to hospital after causing accident
+    - number of drivers who go to hospital after being victim in accident
+  - Survey results of 1 through 5 rating to measure visual aesthetics.
