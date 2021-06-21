@@ -1,4 +1,4 @@
-# Mechacar Analysis
+# MechaCar Analysis
 
 ## Overview
 - AutosRU's newest prototype, the MechaCar, is suffering from production troubles that are blocking the manufacturing team's progress. Management has set a task to review production data for insights that may help the manufacturing team.
