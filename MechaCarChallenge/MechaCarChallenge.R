@@ -37,3 +37,13 @@ psi_summary
 #create a lot_summary df using group_by() and summarize() to group each lot by mean, med., var., and std.dev. of PSI column
 lot_summary <- coils %>% group_by(Manufacturing_Lot) %>% summarize(Mean_psi = mean(PSI), Median_psi = median(PSI), Variance = var(PSI), Std.Dev. = sd(PSI), .groups = 'keep')
 lot_summary
+
+
+#DELIVERABLE 3
+#determine if PSI across all manufacturing lots is statistically different from the population mean of 1500 PSI
+t.test(coils$PSI,mu=1500)
+
+#run t.test() functions for each manufacturing lot
+t.test(subset(coils, Manufacturing_Lot == "Lot1")$PSI,mu=1500)
+t.test(subset(coils, Manufacturing_Lot == "Lot2")$PSI,mu=1500)
+t.test(subset(coils, Manufacturing_Lot == "Lot3")$PSI,mu=1500)
